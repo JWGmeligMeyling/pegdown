@@ -374,7 +374,7 @@ public class ToHtmlSerializer implements Visitor {
     }
 
     public void visit(SpecialTextNode node) {
-        printer.printEncoded(node.getText());
+        printer.print(node.getText());
     }
 
     public void visit(SuperNode node) {
@@ -409,7 +409,7 @@ public class ToHtmlSerializer implements Visitor {
 
     protected void printTag(TextNode node, String tag) {
         printer.print('<').print(tag).print('>');
-        printer.printEncoded(node.getText());
+        printer.print(node.getText());
         printer.print('<').print('/').print(tag).print('>');
     }
 
